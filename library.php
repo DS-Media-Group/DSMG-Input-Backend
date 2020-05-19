@@ -4,15 +4,15 @@ class Library
     public function __construct()
     {
         $host = "localhost";
-        $dbname = "dsgroupm_inven";
-        $username = "dsgroupm";
+        $dbname = "dsmgstat_inven";
+        $username = "dsmgstat";
         $password = "1Yqb4Tba02";
         $this->db = new PDO("mysql:host={$host};dbname={$dbname}", $username, $password);
     }
     public function add_data($kode,$nama,$kategori,$hargajual,$hargabeli,$sisa)
     {
 		$code = $this->db->prepare('UPDATE code set code = code+1 where id=1');
-        $data = $this->db->prepare('INSERT INTO barang (kode,nama,kategori,hargabeli,hargajual,sisa) VALUES (?, ?, ?, ?, ?)');
+        $data = $this->db->prepare('INSERT INTO barang (kode,nama,kategori,hargabeli,hargajual,sisa) VALUES (?, ?, ?, ?, ?, ?)');
         
         $data->bindParam(1, $kode);
         $data->bindParam(2, $nama);
@@ -61,9 +61,11 @@ class Library
 
     public function delete($kode)
     {
+		$code = $this->db->prepare('UPDATE code set code = code-1 where id=1');
         $query = $this->db->prepare("DELETE FROM barang where kode=?");
         $query->bindParam(1, $kode);
         $query->execute();
+		$code->execute();
         return $query->rowCount();
     }
 
