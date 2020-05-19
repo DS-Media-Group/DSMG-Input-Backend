@@ -32,9 +32,9 @@ if(isset($_GET['hapus_barang']) && $_COOKIE["logged-in"] == "admin"){
 include 'koneksi.php';
 ?>
 <?php 
-$username = "dsgroupm"; 
-$password = "1Yqb4Tba02"; 
-$database = "dsgroupm_inven"; 
+$username = "userdb"; 
+$password = "passdb"; 
+$database = "dbname"; 
 $mysqli = new mysqli("localhost", $username, $password, $database); 
 $query = "SELECT * FROM code";
  

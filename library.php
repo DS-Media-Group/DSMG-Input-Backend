@@ -4,9 +4,9 @@ class Library
     public function __construct()
     {
         $host = "localhost";
-        $dbname = "dsmgstat_inven";
-        $username = "dsmgstat";
-        $password = "1Yqb4Tba02";
+        $dbname = "dbname";
+        $username = "userdb";
+        $password = "passdb";
         $this->db = new PDO("mysql:host={$host};dbname={$dbname}", $username, $password);
     }
     public function add_data($kode,$nama,$kategori,$hargajual,$hargabeli,$sisa)

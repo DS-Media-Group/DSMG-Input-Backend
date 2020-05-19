@@ -1,7 +1,7 @@
 <?php
-$username = "dsgroupm"; 
-$password = "1Yqb4Tba02"; 
-$database = "dsgroupm_inven"; 
+$username = "userdb"; 
+$password = "passdb"; 
+$database = "dbname"; 
 $db1 = new mysqli("localhost", $username, $password, $database); 
  
 // Buat Koneksinya
